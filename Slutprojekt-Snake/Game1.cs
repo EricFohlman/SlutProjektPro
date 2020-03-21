@@ -11,6 +11,7 @@ namespace Slutprojekt_Snake
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Snake snake;
 
         public Game1()
         {
@@ -27,6 +28,12 @@ namespace Slutprojekt_Snake
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            float width = GraphicsDevice.Viewport.Width / 2 - 25;
+            float height = GraphicsDevice.Viewport.Height / 2 - 25;
+
+            snake = new Snake(width, height);
 
             base.Initialize();
         }
@@ -63,7 +70,7 @@ namespace Slutprojekt_Snake
                 Exit();
 
             // TODO: Add your update logic here
-
+            snake.Move();
             base.Update(gameTime);
         }
 
@@ -76,6 +83,11 @@ namespace Slutprojekt_Snake
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            snake.Draw(graphics, spriteBatch);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
