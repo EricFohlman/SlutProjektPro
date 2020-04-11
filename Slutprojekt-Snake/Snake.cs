@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 
 namespace Slutprojekt_Snake
@@ -9,7 +10,8 @@ namespace Slutprojekt_Snake
     {
         float x;
         float y;
-        float speed = 5; 
+        float speed = 4;
+        Vector2 direction;
         public Snake(float x, float y)
         {
             this.x = x;
@@ -31,21 +33,25 @@ namespace Slutprojekt_Snake
         public void Move()
         {
             KeyboardState kState = Keyboard.GetState();
-            if (kState.IsKeyDown(Keys.Right) || kState.IsKeyDown(Keys.D)){
-                x += speed;
+            if (kState.IsKeyDown(Keys.Right) || kState.IsKeyDown(Keys.D))  
+            {
+                direction = new Vector2(1, 0);
             }
             else if (kState.IsKeyDown(Keys.Left) || kState.IsKeyDown(Keys.A))
             {
-                x -= speed;
+                direction = new Vector2(-1, 0);
             }
             else if (kState.IsKeyDown(Keys.Up) || kState.IsKeyDown(Keys.W))
             {
-                y -= speed;
+                direction = new Vector2(0, -1);
             }
             else if (kState.IsKeyDown(Keys.Down) || kState.IsKeyDown(Keys.S))
             {
-                y += speed;
+                direction = new Vector2(0, 1);
             }
+
+            x += direction.X * speed;
+            y += direction.Y * speed;
         }
     }
 }
