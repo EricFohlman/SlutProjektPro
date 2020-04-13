@@ -30,19 +30,23 @@ namespace Slutprojekt_Snake
             KeyboardState kState = Keyboard.GetState();
             if (kState.IsKeyDown(Keys.Right) || kState.IsKeyDown(Keys.D))  
             {
-                direction = new Vector2(1, 0);
+                if (direction != new Vector2(-1,0))
+                    direction = new Vector2(1, 0);
             }
             else if (kState.IsKeyDown(Keys.Left) || kState.IsKeyDown(Keys.A))
             {
-                direction = new Vector2(-1, 0);
+                if (direction != new Vector2(1, 0))
+                    direction = new Vector2(-1, 0);
             }
             else if (kState.IsKeyDown(Keys.Up) || kState.IsKeyDown(Keys.W))
             {
-                direction = new Vector2(0, -1);
+                if (direction != new Vector2(0, 1))
+                    direction = new Vector2(0, -1);
             }
             else if (kState.IsKeyDown(Keys.Down) || kState.IsKeyDown(Keys.S))
             {
-                direction = new Vector2(0, 1);
+                if (direction != new Vector2(0, -1))
+                   direction = new Vector2(0, 1);
             }
 
             
