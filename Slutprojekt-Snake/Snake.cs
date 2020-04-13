@@ -4,32 +4,27 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 
+
 namespace Slutprojekt_Snake
 {
     class Snake
     {
         float x;
         float y;
-        float speed = 4;
         Vector2 direction;
+        List<BodyPart> body = new List<BodyPart>();
+
         public Snake(float x, float y)
         {
             this.x = x;
             this.y = y;
-
+            direction = new Vector2(0, -1);
+            body.Add(new BodyPart(x, y));
+            body.Add(new BodyPart(x, y + 50));
+            body.Add(new BodyPart(x, y + 100));
         }
 
-        public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
-        {
-            Texture2D rect = new Texture2D(graphics.GraphicsDevice, 50, 50);
 
-            Color[] data = new Color[50 * 50];
-            for (int i = 0; i < data.Length; ++i) data[i] = Color.Black;
-            rect.SetData(data);
-
-            Vector2 coor = new Vector2(x, y);
-            spriteBatch.Draw(rect, coor, Color.White);
-        }
         public void Move()
         {
             KeyboardState kState = Keyboard.GetState();
@@ -50,8 +45,28 @@ namespace Slutprojekt_Snake
                 direction = new Vector2(0, 1);
             }
 
-            x += direction.X * speed;
-            y += direction.Y * speed;
+            
+            x += direction.X * 50;
+            y += direction.Y * 50;
+            for(int i=body.Count-1; i>0; i--)
+            {
+                BodyPart previous = body[i - 1];
+                BodyPart current = body[i];
+
+                current.x = previous.x;
+                current.y = previous.y;
+
+            }
+
+            body[0].x = x;
+            body[0].y = y;
+        }
+        public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
+        {
+            for (int i = 0; i < body.Count; i++)
+            {
+                body[i].Draw(graphics, spriteBatch);
+            }
         }
     }
 }

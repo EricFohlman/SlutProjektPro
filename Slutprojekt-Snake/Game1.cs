@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Slutprojekt_Snake
 {
@@ -20,6 +21,9 @@ namespace Slutprojekt_Snake
             graphics.PreferredBackBufferHeight = 750;
             graphics.PreferredBackBufferWidth = 750;
             graphics.ApplyChanges();
+
+            this.IsFixedTimeStep = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 5d);
         }
 
         /// <summary>
