@@ -13,17 +13,30 @@ namespace Slutprojekt_Snake
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Snake snake;
+        Food food;
+        Random random;
+        int screenWidth = 750;
+        int screenHeight = 750;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferHeight = 750;
-            graphics.PreferredBackBufferWidth = 750;
+            graphics.PreferredBackBufferHeight = screenHeight;
+            graphics.PreferredBackBufferWidth = screenWidth;
             graphics.ApplyChanges();
 
             this.IsFixedTimeStep = true;
             this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 5d);
+
+            random = new Random();
+        }
+
+        private void SpawnFood()
+        {
+            int blockWidth = screenWidth / Block.Size;
+            int blockHeight = screenHeight / Block.Size;
+            food = new Food(random.Next(0, blockWidth) * Block.Size, random.Next(0, blockHeight) * Block.Size);
         }
 
         /// <summary>
@@ -41,6 +54,8 @@ namespace Slutprojekt_Snake
             float height = GraphicsDevice.Viewport.Height / 2 - 25;
 
             snake = new Snake(width, height);
+
+            SpawnFood();
 
             base.Initialize();
         }
@@ -76,6 +91,13 @@ namespace Slutprojekt_Snake
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (snake.x == food.x && snake.y == food.y)
+            {
+                snake.Grow();
+                SpawnFood();
+            }
+
+
             snake.Move();
             base.Update(gameTime);
         }
@@ -93,6 +115,8 @@ namespace Slutprojekt_Snake
             spriteBatch.Begin();
 
             snake.Draw(graphics, spriteBatch);
+
+            food.Draw(graphics, spriteBatch);
 
             spriteBatch.End();
 

@@ -9,8 +9,8 @@ namespace Slutprojekt_Snake
 {
     class Snake
     {
-        float x;
-        float y;
+        public float x;
+        public float y;
         Vector2 direction;
         List<BodyPart> body = new List<BodyPart>();
 
@@ -20,10 +20,14 @@ namespace Slutprojekt_Snake
             this.y = y;
             direction = new Vector2(0, -1);
             body.Add(new BodyPart(x, y));
-            body.Add(new BodyPart(x, y + 50));
-            body.Add(new BodyPart(x, y + 100));
+            body.Add(new BodyPart(x, y + Block.Size));
+            body.Add(new BodyPart(x, y + Block.Size * 2));
         }
 
+        public void Grow()
+        {
+            body.Add(new BodyPart(x, y));
+        }
 
         public void Move()
         {
@@ -50,8 +54,8 @@ namespace Slutprojekt_Snake
             }
 
             
-            x += direction.X * 50;
-            y += direction.Y * 50;
+            x += direction.X * Block.Size;
+            y += direction.Y * Block.Size;
             for(int i=body.Count-1; i>0; i--)
             {
                 BodyPart previous = body[i - 1];
