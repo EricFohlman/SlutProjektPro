@@ -14,6 +14,15 @@ namespace Slutprojekt_Snake
         Vector2 direction;
         Vector2 previousDirection;
         List<BodyPart> body = new List<BodyPart>();
+        
+        public BodyPart Head
+        {
+            get { return body[0]; }
+        }
+        public List<BodyPart> Tail
+        {
+            get { return body.GetRange(1, body.Count - 1); }
+        }
 
         public Snake(float x, float y)
         {
@@ -27,7 +36,9 @@ namespace Slutprojekt_Snake
 
         public void Grow()
         {
-            body.Add(new BodyPart(x, y));
+            BodyPart ass = body[body.Count - 1];
+            body.Add(new BodyPart(ass.x, ass.y));
+
         }
         public void ReadInput()
         {

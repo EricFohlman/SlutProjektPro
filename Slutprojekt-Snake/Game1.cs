@@ -38,6 +38,15 @@ namespace Slutprojekt_Snake
             food = new Food(random.Next(0, blockWidth) * Block.Size, random.Next(0, blockHeight) * Block.Size);
         }
 
+        private void Restart()
+        {
+            float width = GraphicsDevice.Viewport.Width / 2 - 25;
+            float height = GraphicsDevice.Viewport.Height / 2 - 25;
+
+            snake = new Snake(width, height);
+
+            SpawnFood();   
+        }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -48,14 +57,9 @@ namespace Slutprojekt_Snake
         {
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            float width = GraphicsDevice.Viewport.Width / 2 - 25;
-            float height = GraphicsDevice.Viewport.Height / 2 - 25;
-
-            snake = new Snake(width, height);
-
-            SpawnFood();
             clock = new GameClock();
+
+            Restart();
 
             base.Initialize();
         }
@@ -104,6 +108,11 @@ namespace Slutprojekt_Snake
             {
                 snake.Move();
             }
+            for(int i = 0; i < snake.Tail.Count; i++)
+                if(snake.Head.x == snake.Tail[i].x && snake.Head.y == snake.Tail[i].y)
+                {
+                    Restart();
+                }
             
             base.Update(gameTime);
         }
