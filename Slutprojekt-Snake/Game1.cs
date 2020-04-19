@@ -15,6 +15,7 @@ namespace Slutprojekt_Snake
         Snake snake;
         Food food;
         Random random;
+        GameClock clock;
         int screenWidth = 750;
         int screenHeight = 750;
 
@@ -26,8 +27,6 @@ namespace Slutprojekt_Snake
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.ApplyChanges();
 
-            this.IsFixedTimeStep = true;
-            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 5d);
 
             random = new Random();
         }
@@ -56,6 +55,7 @@ namespace Slutprojekt_Snake
             snake = new Snake(width, height);
 
             SpawnFood();
+            clock = new GameClock();
 
             base.Initialize();
         }
@@ -97,8 +97,14 @@ namespace Slutprojekt_Snake
                 SpawnFood();
             }
 
+            clock.Tick(gameTime);
+            snake.ReadInput();
 
-            snake.Move();
+            if (clock.didAdvanceFrame)
+            {
+                snake.Move();
+            }
+            
             base.Update(gameTime);
         }
 
