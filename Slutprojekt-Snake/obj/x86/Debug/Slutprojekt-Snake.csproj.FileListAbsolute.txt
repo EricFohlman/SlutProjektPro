@@ -40,3 +40,26 @@ C:\Users\Eric\OneDrive\Dokument\Visual Studio 2017\Projects\Slutprojekt-Snake\Sl
 C:\Users\Eric\OneDrive\Dokument\Visual Studio 2017\Projects\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.csprojResolveAssemblyReference.cache
 C:\Users\Eric\OneDrive\Dokument\Visual Studio 2017\Projects\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.exe
 C:\Users\Eric\OneDrive\Dokument\Visual Studio 2017\Projects\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.pdb
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\Slutprojekt-Snake.exe
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\Slutprojekt-Snake.pdb
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.csprojAssemblyReference.cache
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.csproj.CoreCompileInputs.cache
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.csproj.CopyComplete
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.exe
+C:\Users\ericf\Downloads\Slutprojekt-Snake\Slutprojekt-Snake\obj\x86\Debug\Slutprojekt-Snake.pdb

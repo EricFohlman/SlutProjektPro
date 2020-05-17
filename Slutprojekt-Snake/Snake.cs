@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Slutprojekt_Snake
 {
-    class Snake
+    class Snake /*Denna metoden bestämmer att ormen ska börja med tre kropps delar och kunna röra sig så ett typiskt snake spel brukar alltså höger vänster, inte bakåt eller gå på sig själv. Den ser också till att blocken följer varandra och inte mergar och blir ett, den följer alltså första blockets senaste position.*/
     {
         public float x;
         public float y;

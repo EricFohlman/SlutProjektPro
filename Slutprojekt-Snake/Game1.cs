@@ -8,7 +8,7 @@ namespace Slutprojekt_Snake
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class Game1 : Game /*Här anropas variabler samt metoder*/
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -19,7 +19,7 @@ namespace Slutprojekt_Snake
         int screenWidth = 750;
         int screenHeight = 750;
 
-        public Game1()
+        public Game1() /*Ändrar spelskärmens storlek och spawnar en random*/
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -31,14 +31,14 @@ namespace Slutprojekt_Snake
             random = new Random();
         }
 
-        private void SpawnFood()
+        private void SpawnFood() /*Spawnar maten i rätt storlek och i rätt postion med ormen*/
         {
             int blockWidth = screenWidth / Block.Size;
             int blockHeight = screenHeight / Block.Size;
             food = new Food(random.Next(0, blockWidth) * Block.Size, random.Next(0, blockHeight) * Block.Size);
         }
 
-        private void Restart()
+        private void Restart() /*Ser till att ormen inte försvinner halvägs utanför bannan alltså att den är alignad med banan samt maten.*/
         {
             float width = GraphicsDevice.Viewport.Width / 2 - 25;
             float height = GraphicsDevice.Viewport.Height / 2 - 25;
@@ -53,7 +53,7 @@ namespace Slutprojekt_Snake
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
-        protected override void Initialize()
+        protected override void Initialize()/*När ormen dör startar spelet om dvs vid rör sig själv endast i detta fallet*/
         {
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -90,7 +90,7 @@ namespace Slutprojekt_Snake
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Update(GameTime gameTime)
+        protected override void Update(GameTime gameTime) /*Kollisionen för maten och ormen och att den lägger till maten som en bodypart,*/
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
@@ -122,7 +122,7 @@ namespace Slutprojekt_Snake
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
+        protected override void Draw(GameTime gameTime) /*Denna skriver ut allt som spelet behöver för att fungera*/
         {
             GraphicsDevice.Clear(Color.White);
 

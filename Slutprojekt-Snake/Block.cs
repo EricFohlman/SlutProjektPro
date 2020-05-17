@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Slutprojekt_Snake
 {
-    class Block
+    class Block /*Denna klassen ansvarar för att rita ut en rectangel som är en kvadrat i detta fall*/
     {
         public static readonly int Size = 50;
         public float x;

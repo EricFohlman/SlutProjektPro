@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Slutprojekt_Snake
 {
-    class Food : Block
+    class Food : Block /*Detta skapar variabeln Food som block*/
     {
         public Food(float x, float y) : base(x, y)
         {
+
         }
     }
 }
